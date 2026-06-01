@@ -1,7 +1,32 @@
-let humanScore = 0;
-let computerScore = 0;
-let numberOfRounds = 5;
 
+let computerScore = 0; 
+let humanScore = 0;
+let roundsToPlay = 5;
+
+
+function playGame () {
+    for (let i= 0; i < roundsToPlay; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore > computerScore){
+        console.log ('You beat the computer!');
+    }
+    else if (humanScore < computerScore) {
+        console.log('The computer beat you!');
+    }
+    else {
+        console.log('You tied!');
+    }
+}
+
+playGame();
+
+console.log('Computer Score: ' + ' ' + computerScore);
+console.log('Your Score: ' + ' ' + humanScore); 
 
 
 function playRound(humanChoice,computerChoice) {
@@ -18,7 +43,7 @@ function playRound(humanChoice,computerChoice) {
        computerScore++;
     }
     else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        console.log('You win! rock beats paper!');
+        console.log('You win! rock beats scissors!');
         humanScore++;
     }
     else if (humanChoice === 'rock' && computerChoice === 'rock') {
@@ -42,43 +67,22 @@ function playRound(humanChoice,computerChoice) {
 
 }   
 
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
-
-
-console.log('Computer Score: ' + ' ' + computerScore);
-console.log('Your Score: ' + ' ' + humanScore); 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function randomInt(max) {
     return Math.floor(Math.random(3) * max);
 }
 
 function getComputerChoice() { 
-   let computerChoice;
-   if (randomInt(3) === 0) {
-    computerChoice = 'paper';
-   }
-   else if (randomInt(3) === 1){
-    computerChoice = 'rock';
-   }
-   else if (randomInt(3) === 2) {
-    computerChoice = 'scissors';
-   }
-   return computerChoice;
+  const computerChoice = randomInt(3);
+
+  if (computerChoice === 0) {
+    return 'paper';
+  }
+  else if (computerChoice === 1) {
+    return 'rock';
+  }
+  else {
+    return 'scissors';
+  }
 }
 
 function getHumanChoice() {
