@@ -1,16 +1,25 @@
 
 let computerScore = 0; 
 let humanScore = 0;
-let roundsToPlay = 5;
+// let roundsToPlay = 5;
+
+const btnrock = document.getElementById('rock');
+btnrock.addEventListener('click', getHumanChoice);
+
+const btnpaper = document.getElementById('paper');
+btnpaper.addEventListener('click', getHumanChoice);
+
+const btnscissors = document.getElementById('scissors');
+btnscissors.addEventListener('click', getHumanChoice);
 
 
 function playGame () {
-    for (let i= 0; i < roundsToPlay; i++) {
+    // for (let i= 0; i < roundsToPlay; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
 
         playRound(humanSelection, computerSelection);
-    }
+    
 
     if (humanScore > computerScore){
         console.log ('You beat the computer!');
@@ -23,7 +32,7 @@ function playGame () {
     }
 }
 
-playGame();
+// playGame();
 
 console.log('Computer Score: ' + ' ' + computerScore);
 console.log('Your Score: ' + ' ' + humanScore); 
@@ -85,10 +94,11 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-   let humanChoice =  prompt('rock, paper or scissors: ');
+function getHumanChoice(event) {
+    let humanChoice = event.target.textContent; 
     return humanChoice; 
 }
 
+console.log(getHumanChoice())
 
 
