@@ -12,27 +12,23 @@ btnpaper.addEventListener('click', getHumanChoice);
 const btnscissors = document.getElementById('scissors');
 btnscissors.addEventListener('click', getHumanChoice);
 
+const humantracker = document.createElement('div');
+humantracker.textContent = "hello" 
+humantracker.addEventListener('click', humantracker);
 
-function playGame () {
-    // for (let i= 0; i < roundsToPlay; i++) {
-        // const humanSelection = getHumanChoice();
-        // const computerSelection = getComputerChoice();
+const computertracker = document.createElement('div')
 
-        // playRound(humanSelection, computerSelection);
-    
 
-    if (humanScore > computerScore){
-        console.log ('You beat the computer!');
-    }
-    else if (humanScore < computerScore) {
-        console.log('The computer beat you!');
-    }
-    else {
-        console.log('You tied!');
-    }
+function getHumanChoice(event) {
+
+    let humanChoice = event.target.textContent; 
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
+
+    console.log('Computer Score: ' + ' ' + computerScore);
+    console.log('Your Score: ' + ' ' + humanScore); 
 }
 
-// playGame();
 
 function playRound(humanChoice, computerChoice) {
 
@@ -69,7 +65,6 @@ function playRound(humanChoice, computerChoice) {
         console.log('You win! scissors cut paper!')
         humanScore++;
     }
-
 }   
 
 function randomInt(max) {
@@ -91,17 +86,3 @@ function getComputerChoice() {
 }
 
 
-
-function getHumanChoice(event) {
-
-    let humanChoice = event.target.textContent; 
-
-    let computerChoice = getComputerChoice();
-        
-    playRound(humanChoice, computerChoice);
-    
-}
-
-
-console.log('Computer Score: ' + ' ' + computerScore);
-console.log('Your Score: ' + ' ' + humanScore); 
