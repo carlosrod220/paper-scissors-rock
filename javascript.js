@@ -15,10 +15,10 @@ btnscissors.addEventListener('click', getHumanChoice);
 
 function playGame () {
     // for (let i= 0; i < roundsToPlay; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        // const humanSelection = getHumanChoice();
+        // const computerSelection = getComputerChoice();
 
-        playRound(humanSelection, computerSelection);
+        // playRound(humanSelection, computerSelection);
     
 
     if (humanScore > computerScore){
@@ -34,11 +34,7 @@ function playGame () {
 
 // playGame();
 
-console.log('Computer Score: ' + ' ' + computerScore);
-console.log('Your Score: ' + ' ' + humanScore); 
-
-
-function playRound(humanChoice,computerChoice) {
+function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === 'paper' && computerChoice === 'paper') {
        console.log("It's a paper tie!");
@@ -94,11 +90,18 @@ function getComputerChoice() {
   }
 }
 
+
+
 function getHumanChoice(event) {
+
     let humanChoice = event.target.textContent; 
-    return humanChoice; 
+
+    let computerChoice = getComputerChoice();
+        
+    playRound(humanChoice, computerChoice);
+    
 }
 
-console.log(getHumanChoice())
 
-
+console.log('Computer Score: ' + ' ' + computerScore);
+console.log('Your Score: ' + ' ' + humanScore); 
