@@ -11,14 +11,11 @@ btnpaper.addEventListener('click', getHumanChoice);
 const btnscissors = document.getElementById('scissors');
 btnscissors.addEventListener('click', getHumanChoice);
 
-const humantracker = document.createElement('div');
-humantracker.id = "scoreres";
+const humantracker = document.getElementById('yourScore');
 humantracker.textContent = "Your Score: " + humanScore;
-document.body.appendChild(humantracker);
 
-const computertracker = document.createElement('div');
+const computertracker = document.getElementById('pcScore');
 computertracker.textContent = 'Computer Score: ' + computerScore;
-document.body.appendChild(computertracker);
 
 const winnerAnnouncement = document.getElementById("notice");
 
@@ -73,7 +70,7 @@ function playRound(humanChoice, computerChoice) {
 }   
 
 function randomInt(max) {
-    return Math.floor(Math.random(3) * max);
+    return Math.floor(Math.random() * max);
 }
 
 function getComputerChoice() { 

@@ -3,46 +3,74 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    font-family: system-ui, sans-serif;
     
 }
 
 .top-half {
-    background-color: pink;
+    background-color: #274472;
     display: flex;
     outline: auto;
-    height: 50vh;
+    height: 45vh;
+}
+.bottom-half {
+    background-color: #E7F1FB;
+    display: flex;
+    height: 55vh;
+    flex-direction: column;
 }
 
 h1 {
     font-size: 50px;
     display: flex;
-    height: 50vh;
     align-items: center;
     width: 100%;
     justify-content: center;
-
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
+    color: #F2F7FF;
 
 }
 
 #introduction {
     display: flex;
-    outline: auto;
     font-size: 32px;
     justify-content: center;
+    margin-bottom: 10px;
+    color: #C1552E;
+    font-weight: bold;
 }
 
 .buttons {
     display: flex;
-    outline: auto;
     justify-content: center;
+    margin-bottom: 16px;
+    
+}
+
+#rock, #paper, #scissors {
+    padding: 24px;
+    margin: 16px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 0;
+    width: 140px;
+    
 }
 
 #notice {
     display: flex; 
     justify-content: center;
+    margin-bottom: 16px;
+    font-size: 36px;
+    color:#B4790F;
+    font-weight: bold;
+}
+
+#yourScore, #pcScore {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #C1552E;
+    
 }
